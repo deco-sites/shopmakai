@@ -20,7 +20,6 @@ function Alert({ alerts = messages }: Props) {
           <Text
             class="flex justify-center items-center w-[340px] sm:w-[500px] h-full text-primary"
             variant="caption-regular"
-            tone="interactive-default"
           >
             {alert}
           </Text>

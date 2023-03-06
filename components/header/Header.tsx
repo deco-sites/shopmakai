@@ -52,7 +52,7 @@ export interface Props {
 
 function Header({ alerts, searchbar, products, navItems = item, logo }: Props) {
   return (
-    <header class="h-[120px]">
+    <header class="h-[145px] md:h-[120px]">
       <div class="bg-default fixed w-full z-50">
         <Navbar items={navItems} logo={logo} />
         <Alert alerts={alerts} />

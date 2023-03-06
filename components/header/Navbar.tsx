@@ -28,29 +28,33 @@ function Navbar({ items, logo }: {
   return (
     <>
       {/* Mobile Version */}
-      <div class="md:hidden flex flex-row justify-between items-center h-[53px] border-b-1 border-default w-full px-4 gap-4">
-        <HeaderButton variant="menu" />
+      <div class="md:hidden flex flex-col justify-around items-center h-[110px] w-full">
+        <div class="flex flex-row justify-between items-center w-full px-4 gap-4">
+          <HeaderButton variant="menu" />
 
-        <a href="/" class="flex-grow w-[180px]" aria-label="Store logo">
-          <Picture class="block" preload="false">
-            <Source
-              fetchPriority="auto"
-              src={logo}
-              width={180}
-              height={21}
-            />
-            <img
-              class="object-cover w-full"
-              loading="eager"
-              src={logo}
-              alt="Logo Makai"
-            />
-          </Picture>
-        </a>
+          <a href="/" class="flex-grow w-[134px] flex justify-center" aria-label="Store logo">
+            <Picture class="block" preload="false">
+              <Source
+                fetchPriority="auto"
+                src={logo}
+                width={134}
+                height={15}
+              />
+              <img
+                class="object-cover"
+                loading="eager"
+                src={logo}
+                alt="Logo Makai"
+              />
+            </Picture>
+          </a>
 
-        <div class="flex gap-6">
+          <div class="flex gap-6">
+            <HeaderButton variant="cart" />
+          </div>
+        </div>
+        <div class="w-full px-5">
           <HeaderButton variant="search" />
-          <HeaderButton variant="cart" />
         </div>
       </div>
 
@@ -77,7 +81,7 @@ function Navbar({ items, logo }: {
         </div>
         <div class="flex items-center justify-end gap-6">
           <HeaderButton variant="search" />
-          <a href="/login" aria-label="Log in">
+          <a href="/login" class="text-primary" aria-label="Log in">
             <Icon id="User" width={20} height={20} strokeWidth={0.4} />
           </a>
           <HeaderButton variant="cart" />
