@@ -63,12 +63,18 @@ function Searchbar({
   products,
 }: Props) {
   return (
-    <div class="mt-6 sm:mt-10 overflow-y-auto">
+    <div class="overflow-y-auto">
       <form
         id="searchbar"
         action={action}
-        class="flex gap-3 p-3 border border-default"
+        class="flex gap-3 px-3 md:px-0 py-1.5 border-1 md:border-0 md:border-b-1 border-primary-light"
       >
+        <input
+          class="flex-grow outline-none"
+          name={name}
+          defaultValue={query}
+          placeholder={placeholder}
+        />
         <Button
           variant="icon"
           aria-label="Search"
@@ -82,49 +88,7 @@ function Searchbar({
             strokeWidth={0.01}
           />
         </Button>
-        <input
-          class="flex-grow outline-none"
-          name={name}
-          defaultValue={query}
-          placeholder={placeholder}
-        />
       </form>
-      <div class="flex flex-col divide-y divide-default">
-        <div class="flex flex-col gap-6 py-6">
-          <Text variant="body-strong">Termos mais buscados</Text>
-          <ul class="flex flex-col gap-6">
-            {terms.map((term) => (
-              <li>
-                <a href={`/s?q=${term}`} class="flex gap-4 items-center">
-                  <Text variant="body-regular">
-                    <Icon
-                      id="MagnifyingGlass"
-                      width={20}
-                      height={20}
-                      strokeWidth={0.01}
-                    />
-                  </Text>
-                  <Text variant="body-regular">
-                    {term}
-                  </Text>
-                </a>
-              </li>
-            ))}
-          </ul>
-        </div>
-        {products && (
-          <div class="flex flex-col gap-6 py-6">
-            <Text variant="body-strong">Produtos sugeridos</Text>
-            <Slider>
-              {products.map((product) => (
-                <div class="min-w-[200px] max-w-[200px]">
-                  <ProductCard product={product} />
-                </div>
-              ))}
-            </Slider>
-          </div>
-        )}
-      </div>
     </div>
   );
 }

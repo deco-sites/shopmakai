@@ -3,20 +3,16 @@ import Button from "$store/components/ui/Button.tsx";
 import { useUI } from "$store/sdk/useUI.ts";
 import { useCart } from "deco-sites/std/commerce/vtex/cart/useCart.ts";
 
+import Searchbar, {
+  Props as SearchbarProps,
+} from "$store/components/search/Searchbar.tsx";
+
 function SearchButton() {
   const { displaySearchbar } = useUI();
 
   return (
     <>
-      <Button
-        variant="icon"
-        aria-label="search icon button"
-        onClick={() => {
-          displaySearchbar.value = true;
-        }}
-      >
-        <Icon id="MagnifyingGlass" width={20} height={20} strokeWidth={0.1} />
-      </Button>
+      <Searchbar placeholder="qual é o look de hoje?" />
     </>
   );
 }
@@ -28,6 +24,7 @@ function MenuButton() {
     <Button
       variant="icon"
       aria-label="open menu"
+      class="text-primary"
       onClick={() => {
         displayMenu.value = true;
       }}
@@ -45,7 +42,7 @@ function CartButton() {
   return (
     <Button
       variant="icon"
-      class="relative mr-2"
+      class="relative mr-2 text-primary"
       aria-label="open cart"
       disabled={loading.value}
       onClick={() => {
