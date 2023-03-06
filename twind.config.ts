@@ -15,6 +15,7 @@ const options: Omit<Options, "selfURL"> = {
       display: "flex",
       flexDirection: "column",
       minHeight: "100vh",
+      fontFamily: "Poppins,sans-serif"
     },
     'section[data-manifest-key="./sections/Footer.tsx"]': {
       marginTop: "auto",
@@ -54,16 +55,8 @@ const options: Omit<Options, "selfURL"> = {
     extend: {
       colors: {
         // Tokens to remove
-        primary: "#2FD180",
-        "primary-green-light": "#2EAE80",
-        "primary-green-dark": "#177151",
-        "primary-dark": "#221E1F",
-        "primary-light": "#f4f4f4",
-        "custom-brown": "#f8f5f1",
-        "custom-gray": "#f4f4f4",
-        "primary-red": "#D10923",
-        "primary-red-light": "#DA262B",
-        "primary-red-dark": "#A1061A",
+        primary: "#616161",
+        "pink": "#eed7e4",
 
         // Tokens from Design System
         "default": "#FFFFFF",
@@ -135,6 +128,7 @@ const options: Omit<Options, "selfURL"> = {
       lg: "1024px",
       xl: "1280px",
       "2xl": "1536px",
+      "xxl": "1800px"
     },
   },
 };

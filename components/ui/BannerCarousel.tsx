@@ -37,16 +37,16 @@ function BannerCarousel({ images, preload }: Props) {
   };
 
   const desktopDimension: Dimension = {
-    width: 1366,
-    height: 517,
+    width: 1920,
+    height: 750,
   };
 
   return (
     <Carousel
       // this padding top (pt) is the aspect-ratio (height/width) value from the image below for each viewport
-      class={`w-full pt-[${aspectRatio(mobileDimension)}%] sm:pt-[${
+      class={`w-full max-w-[1800px] m-auto pt-[${aspectRatio(mobileDimension)}%] sm:pt-[${
         aspectRatio(desktopDimension)
-      }%]`}
+      }%] xxl:pt-[680px]`}
       animationDuration={5}
       leftArrow={
         <Icon
@@ -71,7 +71,7 @@ function BannerCarousel({ images, preload }: Props) {
         const lcp = isFirst && preload;
 
         return (
-          <Picture class="w-screen block" preload={lcp}>
+          <Picture class="block" preload={lcp}>
             <Source
               media="(max-width: 767px)"
               fetchPriority={lcp ? "high" : "auto"}

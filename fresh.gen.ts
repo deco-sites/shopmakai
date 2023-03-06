@@ -492,6 +492,11 @@ const manifest: DecoManifest = {
         "title": " Header",
         "type": "object",
         "properties": {
+          "logo": {
+            "format": "image-uri",
+            "type": "string",
+            "title": "Logo",
+          },
           "alerts": {
             "type": "array",
             "items": {
@@ -597,6 +602,7 @@ const manifest: DecoManifest = {
           },
         },
         "required": [
+          "logo",
           "alerts",
         ],
       },
