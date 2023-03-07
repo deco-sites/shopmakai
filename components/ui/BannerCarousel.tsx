@@ -32,8 +32,8 @@ export interface Props {
 
 function BannerCarousel({ images, preload }: Props) {
   const mobileDimension: Dimension = {
-    width: 360,
-    height: 331,
+    width: 768,
+    height: 1024,
   };
 
   const desktopDimension: Dimension = {
@@ -44,50 +44,32 @@ function BannerCarousel({ images, preload }: Props) {
   return (
     <Carousel
       // this padding top (pt) is the aspect-ratio (height/width) value from the image below for each viewport
-      class={`w-full max-w-[1800px] m-auto pt-[${aspectRatio(mobileDimension)}%] sm:pt-[${
-        aspectRatio(desktopDimension)
-      }%] xxl:pt-[680px]`}
+      class={`w-full h-full max-w-[1843px] m-auto pt-[${aspectRatio(mobileDimension)}%] xxl:pt-[680px]`}
       animationDuration={5}
-      leftArrow={
-        <Icon
-          width={24}
-          height={24}
-          id="ChevronLeft"
-          strokeWidth={3}
-        />
-      }
-      rightArrow={
-        <Icon
-          width={24}
-          height={24}
-          id="ChevronRight"
-          strokeWidth={3}
-        />
-      }
-      dot={<Icon id="Circle" width={24} height={24} strokeWidth={2} />}
+      dot={<Icon id="Circle" width={8} height={8} strokeWidth={2} />}
     >
       {images?.map(({ mobile, desktop, alt }, index) => {
         const isFirst = index === 0;
         const lcp = isFirst && preload;
 
         return (
-          <Picture class="block" preload={lcp}>
+          <Picture class="w-full h-full" preload={lcp}>
             <Source
-              media="(max-width: 767px)"
+              media="(max-width: 1024px)"
               fetchPriority={lcp ? "high" : "auto"}
               src={mobile}
-              width={360}
-              height={331}
+              width={768}
+              height={1024}
             />
             <Source
-              media="(min-width: 768px)"
+              media="(min-width: 1025px)"
               fetchPriority={lcp ? "high" : "auto"}
               src={desktop}
               width={1366}
               height={517}
             />
             <img
-              class="object-cover w-full"
+              class="w-full"
               loading={lcp ? "eager" : "lazy"}
               src={desktop}
               alt={alt}
