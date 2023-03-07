@@ -107,7 +107,7 @@ function Carousel(
 
           return (
             <li
-              class="relative w-full"
+              class="relative w-full h-full flex justify-center items-center"
               style="flex: 0 0 100%"
               id={generateSlideId(id, index)}
               data-carousel-slide
@@ -131,7 +131,7 @@ function Carousel(
             {childrenArray.map((_, index) => {
               return (
                 <li
-                  class="inline-block p-2 rounded-full text-white outline-none"
+                  class="inline-block px-8 py-2 rounded-full text-white outline-none"
                   data-carousel-item
                 >
                   <a
