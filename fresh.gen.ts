@@ -582,11 +582,37 @@ const manifest: DecoManifest = {
                     ],
                   },
                 },
+                "imageChildren": {
+                  "title": "Image Children",
+                  "type": "array",
+                  "items": {
+                    "type": "object",
+                    "properties": {
+                      "image": {
+                        "format": "image-uri",
+                        "type": "string",
+                        "title": "Image",
+                      },
+                      "href": {
+                        "type": "string",
+                        "title": "Href",
+                      },
+                      "label": {
+                        "type": "string",
+                        "title": "Label",
+                      },
+                    },
+                    "required": [
+                      "image",
+                      "href",
+                      "label",
+                    ],
+                  },
+                },
               },
               "required": [
                 "label",
                 "href",
-                "children",
               ],
             },
             "title": "Navigation items",
