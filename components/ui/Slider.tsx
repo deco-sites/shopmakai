@@ -7,7 +7,7 @@ interface Props {
 
 function Slider({ children }: Props) {
   return (
-    <ul class="flex flex-nowrap justify-between overflow-x-auto max-w-full w-full scroll-x-mandatory scroll-smooth scrollbar-none gap-10">
+    <ul class="flex flex-nowrap justify-between overflow-x-auto max-w-full w-full scroll-x-mandatory scroll-smooth scrollbar-none">
       {Children.map(
         children,
         (child) => <li class="scroll-snap-center">{child}</li>,

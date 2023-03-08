@@ -624,7 +624,7 @@ const manifest: DecoManifest = {
               "Navigation items used both on mobile and desktop menus",
           },
           "products": {
-            "$id": "9091c349b893f5d60af9017849735ee9f21e2ba0",
+            "$id": "4745e1202484ea61e4cdd1a83ec4c56d9e4dce67",
             "format": "live-function",
             "type": "string",
             "title": "Product suggestions",
@@ -693,7 +693,7 @@ const manifest: DecoManifest = {
         "type": "object",
         "properties": {
           "page": {
-            "$id": "906909daeb7d99a3eb0e05ff52e42d7b9c5b298a",
+            "$id": "78c64adae4b16df19c6019918cf3380bc0a3ea85",
             "format": "live-function",
             "type": "string",
             "title": "Page",
@@ -711,7 +711,7 @@ const manifest: DecoManifest = {
         "type": "object",
         "properties": {
           "page": {
-            "$id": "4246b2b7d22c6a301356a5b3c9c5d48523654a0f",
+            "$id": "05ecb684cf4ee00e98171fdc45227df637e4804e",
             "format": "live-function",
             "type": "string",
             "title": "Page",
@@ -733,7 +733,7 @@ const manifest: DecoManifest = {
             "title": "Title",
           },
           "products": {
-            "$id": "9091c349b893f5d60af9017849735ee9f21e2ba0",
+            "$id": "4745e1202484ea61e4cdd1a83ec4c56d9e4dce67",
             "format": "live-function",
             "type": "string",
             "title": "Products",
@@ -781,7 +781,7 @@ const manifest: DecoManifest = {
         "type": "object",
         "properties": {
           "page": {
-            "$id": "4246b2b7d22c6a301356a5b3c9c5d48523654a0f",
+            "$id": "05ecb684cf4ee00e98171fdc45227df637e4804e",
             "format": "live-function",
             "type": "string",
             "title": "Page",
@@ -1023,7 +1023,7 @@ const manifest: DecoManifest = {
         "type": "object",
         "properties": {
           "page": {
-            "$id": "906909daeb7d99a3eb0e05ff52e42d7b9c5b298a",
+            "$id": "78c64adae4b16df19c6019918cf3380bc0a3ea85",
             "format": "live-function",
             "type": "string",
             "title": "Page",
@@ -1065,7 +1065,7 @@ const manifest: DecoManifest = {
         "type": "object",
         "properties": {
           "page": {
-            "$id": "4246b2b7d22c6a301356a5b3c9c5d48523654a0f",
+            "$id": "05ecb684cf4ee00e98171fdc45227df637e4804e",
             "format": "live-function",
             "type": "string",
             "title": "Page",
@@ -1219,7 +1219,7 @@ const manifest: DecoManifest = {
         "type": "object",
         "properties": {
           "data": {
-            "$id": "906909daeb7d99a3eb0e05ff52e42d7b9c5b298a",
+            "$id": "78c64adae4b16df19c6019918cf3380bc0a3ea85",
           },
         },
         "additionalProperties": true,
@@ -1234,7 +1234,7 @@ const manifest: DecoManifest = {
         "type": "object",
         "properties": {
           "data": {
-            "$id": "906909daeb7d99a3eb0e05ff52e42d7b9c5b298a",
+            "$id": "78c64adae4b16df19c6019918cf3380bc0a3ea85",
           },
         },
         "additionalProperties": true,
@@ -1265,7 +1265,7 @@ const manifest: DecoManifest = {
         "type": "object",
         "properties": {
           "data": {
-            "$id": "9091c349b893f5d60af9017849735ee9f21e2ba0",
+            "$id": "4745e1202484ea61e4cdd1a83ec4c56d9e4dce67",
           },
         },
         "additionalProperties": true,
@@ -1298,7 +1298,7 @@ const manifest: DecoManifest = {
         "type": "object",
         "properties": {
           "data": {
-            "$id": "4246b2b7d22c6a301356a5b3c9c5d48523654a0f",
+            "$id": "05ecb684cf4ee00e98171fdc45227df637e4804e",
           },
         },
         "additionalProperties": true,
@@ -1313,7 +1313,7 @@ const manifest: DecoManifest = {
         "type": "object",
         "properties": {
           "data": {
-            "$id": "906909daeb7d99a3eb0e05ff52e42d7b9c5b298a",
+            "$id": "78c64adae4b16df19c6019918cf3380bc0a3ea85",
           },
         },
         "additionalProperties": true,
@@ -1373,6 +1373,16 @@ const manifest: DecoManifest = {
             "title": "Sort",
             "description": "search sort parameter",
           },
+          "collection": {
+            "type": "array",
+            "items": {
+              "type": "string",
+            },
+            "title": "Collection",
+            "description":
+              "Collection ID or (Product Cluster id). For more info: https://developers.vtex.com/docs/api-reference/search-api#get-/api/catalog_system/pub/products/search .",
+            "pattern": "\\d*",
+          },
         },
         "required": [
           "query",
@@ -1383,7 +1393,7 @@ const manifest: DecoManifest = {
         "type": "object",
         "properties": {
           "data": {
-            "$id": "9091c349b893f5d60af9017849735ee9f21e2ba0",
+            "$id": "4745e1202484ea61e4cdd1a83ec4c56d9e4dce67",
           },
         },
         "additionalProperties": true,
@@ -1439,7 +1449,7 @@ const manifest: DecoManifest = {
         "type": "object",
         "properties": {
           "data": {
-            "$id": "4246b2b7d22c6a301356a5b3c9c5d48523654a0f",
+            "$id": "05ecb684cf4ee00e98171fdc45227df637e4804e",
           },
         },
         "additionalProperties": true,
@@ -1454,7 +1464,7 @@ const manifest: DecoManifest = {
         "type": "object",
         "properties": {
           "data": {
-            "$id": "906909daeb7d99a3eb0e05ff52e42d7b9c5b298a",
+            "$id": "78c64adae4b16df19c6019918cf3380bc0a3ea85",
           },
         },
         "additionalProperties": true,
@@ -1514,6 +1524,16 @@ const manifest: DecoManifest = {
             "title": "Sort",
             "description": "search sort parameter",
           },
+          "collection": {
+            "type": "array",
+            "items": {
+              "type": "string",
+            },
+            "title": "Collection",
+            "description":
+              "Collection ID or (Product Cluster id). For more info: https://developers.vtex.com/docs/api-reference/search-api#get-/api/catalog_system/pub/products/search .",
+            "pattern": "\\d*",
+          },
         },
         "required": [
           "query",
@@ -1524,7 +1544,7 @@ const manifest: DecoManifest = {
         "type": "object",
         "properties": {
           "data": {
-            "$id": "9091c349b893f5d60af9017849735ee9f21e2ba0",
+            "$id": "4745e1202484ea61e4cdd1a83ec4c56d9e4dce67",
           },
         },
         "additionalProperties": true,
@@ -1557,7 +1577,7 @@ const manifest: DecoManifest = {
         "type": "object",
         "properties": {
           "data": {
-            "$id": "4246b2b7d22c6a301356a5b3c9c5d48523654a0f",
+            "$id": "05ecb684cf4ee00e98171fdc45227df637e4804e",
           },
         },
         "additionalProperties": true,
