@@ -24,58 +24,81 @@ const isIcon = (item: Item): item is IconItem =>
 
 const defaultSections: Section[] = [
   {
-    label: "Sobre",
+    label: "Menu",
     children: [
       {
-        label: "Quem somos",
-        href: "https://www.deco.cx",
+        label: "novidades",
+        href: "/",
       },
       {
-        label: "Privacidade e segurança",
-        href: "https://www.deco.cx",
+        label: "Makai Bikini",
+        href: "/",
       },
       {
-        label: "Termos de uso",
-        href: "https://www.deco.cx",
+        label: "Makainess",
+        href: "/",
       },
       {
-        label: "Trabalhe Conosco",
-        href: "https://www.deco.cx",
+        label: "Bossbabes's Club",
+        href: "/",
+      },
+      {
+        label: "a marca",
+        href: "/",
+      },
+      {
+        label: "SALE",
+        href: "/",
       },
     ],
   },
   {
-    label: "Atendimento",
+    label: "Ajuda",
     children: [
       {
-        label: "Central de Atendimento",
-        href: "https://www.deco.cx",
+        label: "produto com defeito",
+        href: "/",
       },
       {
-        label: "Fale conosco pelo WhatsApp",
-        href: "https://www.deco.cx",
+        label: "entrega",
+        href: "/",
       },
       {
-        label: "Troca e Devolução",
-        href: "https://www.deco.cx",
+        label: "transparência",
+        href: "/",
+      },
+      {
+        label: "sustentabilidade",
+        href: "/",
+      },
+      {
+        label: "troca e devolução",
+        href: "/",
+      },
+      {
+        label: "tabela de medidas",
+        href: "/",
+      },
+      {
+        label: "fala com a gente :)",
+        href: "/",
+      },
+      {
+        label: "cuidados com sua peça",
+        href: "/",
       },
     ],
   },
   {
-    label: "Minha Conta",
+    label: "Redes Sociais",
     children: [
       {
-        label: "Login/Cadastro",
-        href: "https://www.deco.cx",
-      },
-      {
-        label: "Meus pedidos",
-        href: "https://www.deco.cx",
+        icon: "Facebook",
       },
     ],
   },
   {
-    label: "Formas de Pagamento",
+    label: "PAGAMENTO",
     children: [
       {
         icon: "Pix",
@@ -91,17 +114,20 @@ const defaultSections: Section[] = [
       },
     ],
   },
+  {
+    label: "Segurança",
+    children: [
+
+    ],
+  },
 ];
 
 function SectionItem({ item }: { item: Item }) {
   return (
-    <Text
-      variant="caption-regular"
-      tone="interactive-default"
-    >
+  <>
       {isIcon(item)
         ? (
-          <div class="border-default border-1 py-1.5 px-2.5">
+          <div class="py-1.5 px-2.5">
             <Icon
               id={item.icon}
               width={25}
@@ -115,7 +141,7 @@ function SectionItem({ item }: { item: Item }) {
             {item.label}
           </a>
         )}
-    </Text>
+    </>
   );
 }
 
@@ -134,22 +160,22 @@ export interface Props {
 
 function Footer({ sections = defaultSections }: Props) {
   return (
-    <footer class="w-full bg-decorative-one flex flex-col divide-y-1 divide-default">
+    <footer class="w-full bg-white flex flex-col">
       <div>
-        <Container class="w-full flex flex-col divide-y-1 divide-default">
-          <FooterContainer>
+        <Container class="w-full flex flex-col">
+          <FooterContainer class="bg-[#F8F7F7]">
             <Newsletter />
           </FooterContainer>
 
           <FooterContainer>
             {/* Desktop view */}
-            <ul class="hidden sm:flex flex-row gap-20">
+            <ul class="hidden sm:flex flex-row justify-between">
               {sections.map((section) => (
                 <li>
                   <div>
-                    <Text variant="caption-strong" tone="interactive-default">
+                    <h3 class="text-black font-bold uppercase">
                       {section.label}
-                    </Text>
+                    </h3>
 
                     <ul
                       class={`flex ${
@@ -171,25 +197,23 @@ function Footer({ sections = defaultSections }: Props) {
             <ul class="flex flex-col sm:hidden sm:flex-row gap-4">
               {sections.map((section) => (
                 <li>
-                  <Text variant="caption-strong" tone="interactive-default">
                     <details>
-                      <summary>
+                      <summary class="text-primary font-bold uppercase block py-[18px] border-b-1 border-primary-extra-light">
                         {section.label}
                       </summary>
 
                       <ul
                         class={`flex ${
                           isIcon(section.children[0]) ? "flex-row" : "flex-col"
-                        } gap-2 px-2 pt-2`}
+                        }`}
                       >
                         {section.children.map((item) => (
-                          <li>
+                          <li class="py-[18px] border-b-1 border-primary-extra-light pl-3 text-primary">
                             <SectionItem item={item} />
                           </li>
                         ))}
                       </ul>
                     </details>
-                  </Text>
                 </li>
               ))}
             </ul>
@@ -199,55 +223,9 @@ function Footer({ sections = defaultSections }: Props) {
 
       <div>
         <Container class="w-full">
-          <FooterContainer class="flex justify-between w-full">
-            <Text
-              class="flex items-center gap-1"
-              variant="caption-strong"
-              tone="interactive-default"
-            >
-              Powered by{" "}
-              <a
-                href="https://www.deco.cx"
-                aria-label="powered by https://www.deco.cx"
-              >
-                <Icon id="Deco" height={20} width={60} strokeWidth={0.01} />
-              </a>
-            </Text>
-
-            <ul class="flex items-center justify-center gap-2">
-              <li>
-                <a
-                  href="https://www.instagram.com/deco.cx"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  aria-label="Instagram logo"
-                >
-                  <Icon
-                    class="text-interactive-default"
-                    width={32}
-                    height={32}
-                    id="Instagram"
-                    strokeWidth={1}
-                  />
-                </a>
-              </li>
-              <li>
-                <a
-                  href="http://www.deco.cx/discord"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  aria-label="Discord logo"
-                >
-                  <Icon
-                    class="text-interactive-default"
-                    width={32}
-                    height={32}
-                    id="Discord"
-                    strokeWidth={5}
-                  />
-                </a>
-              </li>
-            </ul>
+          <FooterContainer class="flex flex-col justify-between w-full text-[12px] text-primary-light text-center">
+            <p>Makai Bikini Comércio de Roupas LTDA | CNPJ: 29.325.494/0001-66 © 2022 MAKAIBIKINI. Todos os direitos reservados.</p>
+            <p>Av. Nuta James, 65 - Barra da Tijuca, Rio de Janeiro - RJ, 22640-000.</p>
           </FooterContainer>
         </Container>
       </div>
