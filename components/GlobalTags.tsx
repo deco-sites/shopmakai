@@ -36,7 +36,36 @@ function GlobalTags() {
       }
       <style
         dangerouslySetInnerHTML={{
-          __html: ``,
+          __html: `
+          @font-face {
+            font-family: 'Poppins';
+            font-style: normal;
+            font-weight: 400;
+            font-display: swap;
+            src: url(${asset('/fonts/Poppins-Regular.ttf')}) format('ttf');
+          }
+          @font-face {
+            font-family: 'Poppins';
+            font-style: normal;
+            font-weight: 500;
+            font-display: swap;
+            src: url(${asset('/fonts/Poppins-Medium.ttf')}) format('ttf');
+          }
+          @font-face {
+            font-family: 'Poppins';
+            font-style: normal;
+            font-weight: 600;
+            font-display: swap;
+            src: url(${asset('/fonts/Poppins-SemiBold.ttf')}) format('ttf');
+          }
+          @font-face {
+            font-family: 'Poppins';
+            font-style: normal;
+            font-weight: 700;
+            font-display: swap;
+            src: url(${asset('/fonts/Poppins-Bold.ttf')}) format('ttf');
+          }
+          `,
         }}
       />
     </Head>

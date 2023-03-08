@@ -15,7 +15,7 @@ function ProductShelf({
   products,
 }: Props) {
   return (
-    <Container class="flex flex-col items-center gap-10 py-10">
+    <Container class="flex flex-col items-center justify-between py-10">
       {title && (
         <h2>
           <Text class="uppercase" variant="subheading-strong">{title}</Text>
