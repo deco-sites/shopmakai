@@ -38,13 +38,13 @@ function BannerCarousel({ images, preload }: Props) {
 
   const desktopDimension: Dimension = {
     width: 1920,
-    height: 750,
+    height: 740,
   };
 
   return (
     <Carousel
       // this padding top (pt) is the aspect-ratio (height/width) value from the image below for each viewport
-      class={`w-full h-full max-w-[1843px] m-auto pt-[${aspectRatio(mobileDimension)}%] xxl:pt-[680px]`}
+      class={`w-full h-full max-w-[1843px] m-auto pt-[${aspectRatio(mobileDimension)}%] md:pt-[${aspectRatio(desktopDimension)}%] xxl:pt-[680px]`}
       animationDuration={5}
       dot={<Icon id="Circle" width={8} height={8} strokeWidth={2} />}
     >
