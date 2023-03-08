@@ -47,6 +47,7 @@ function ProductCard({ product, preload }: Props) {
     name,
     image: images,
     offers,
+    isVariantOf
   } = product;
 
   /**
@@ -55,14 +56,8 @@ function ProductCard({ product, preload }: Props) {
    * I decided to get images from unplash. However, you should get the images
    * front the catalog itself. To do this, just uncomment the code below
    */
-  // const [front, back] = images ?? [];
-  const [front, back] = [{
-    url: `https://source.unsplash.com/user/nikutm?v=${productID}`,
-    alternateName: "nikutm-front",
-  }, {
-    url: `https://source.unsplash.com/user/nikutm?v=${productID}-2`,
-    alternateName: "nikutm-back",
-  }];
+  const [front, back] = images ?? [];
+
   const { listPrice, price, seller } = useOffer(offers);
 
   return (
@@ -106,7 +101,9 @@ function ProductCard({ product, preload }: Props) {
 
         <div class="flex justify-between py-2">
           <p class="text-primary-light lowercase text-[12px] font-bold">
-            {name}
+            {
+              isVariantOf.name ? isVariantOf.name : name
+            }
           </p>
           <div class="flex items-center">
             <p class="text-primary font-bold">
