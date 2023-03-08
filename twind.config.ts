@@ -57,6 +57,7 @@ const options: Omit<Options, "selfURL"> = {
         // Tokens to remove
         primary: "#616161",
         "primary-light": "#61616180",
+        "primary-extra-light": "#61616121",
         "pink": "#eed7e4",
 
         // Tokens from Design System

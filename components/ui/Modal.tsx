@@ -60,18 +60,18 @@ const Modal = ({
     <dialog
       {...props}
       ref={ref}
-      class={`bg-transparent p-0 m-0 max-w-full sm:max-w-lg w-full max-h-full h-full backdrop ${variant}`}
+      class={`bg-transparent p-0 m-0 max-w-[80%] sm:max-w-lg w-full max-h-full h-full backdrop ${variant}`}
       onClick={(e) =>
         (e.target as HTMLDialogElement).tagName === "DIALOG" && onClose?.()}
     >
-      <section class="py-6 px-4 h-full bg-default flex flex-col">
-        <header class="flex justify-between pb-6 border-b-1 border-default">
-          <h1>
-            <Text variant="heading-strong">{title}</Text>
-          </h1>
+      <section class="h-full bg-default flex flex-col">
+        <header class="bg-[#f5f5f5] flex justify-between p-6">
           <Button variant="icon" onClick={onClose}>
-            <Icon id="XMark" width={20} height={20} strokeWidth={2} />
+            <Icon id="XMark" class="text-[#dbb7cb]" width={30} height={30} strokeWidth={2} />
           </Button>
+          <h2>
+            <Text class="text-[#dbb7cb]">{title}</Text>
+          </h2>
         </header>
         {loading === "lazy" ? lazy.value && children : children}
       </section>
