@@ -162,8 +162,8 @@ function Footer({ sections = defaultSections }: Props) {
   return (
     <footer class="w-full bg-white flex flex-col">
       <div>
-        <Container class="w-full flex flex-col">
-          <FooterContainer class="bg-[#F8F7F7]">
+        <Container class="w-full flex flex-col max-w-none">
+          <FooterContainer class="bg-[#f5f5f5] lg:pt-[80px]">
             <Newsletter />
           </FooterContainer>
 
