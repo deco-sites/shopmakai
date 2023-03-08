@@ -59,6 +59,7 @@ const options: Omit<Options, "selfURL"> = {
         "primary-light": "#61616180",
         "primary-extra-light": "#61616121",
         "pink": "#eed7e4",
+        "black": "#000",
 
         // Tokens from Design System
         "default": "#FFFFFF",
