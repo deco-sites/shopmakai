@@ -26,12 +26,13 @@ import * as $$$6 from "./sections/ProductDetails.tsx";
 import * as $$$7 from "./sections/ProductGallery.tsx";
 import * as $$$8 from "./sections/ProductShelf.tsx";
 import * as $$$9 from "./sections/SearchControls.tsx";
-import * as $$$10 from "deco-sites/std/sections/SEO.tsx";
-import * as $$$11 from "deco-sites/std/sections/SEOPDP.tsx";
-import * as $$$12 from "deco-sites/std/sections/SEOPLP.tsx";
-import * as $$$13 from "deco-sites/std/sections/configOCC.global.tsx";
-import * as $$$14 from "deco-sites/std/sections/configShopify.global.tsx";
-import * as $$$15 from "deco-sites/std/sections/configVTEX.global.tsx";
+import * as $$$10 from "./sections/Video.tsx";
+import * as $$$11 from "deco-sites/std/sections/SEO.tsx";
+import * as $$$12 from "deco-sites/std/sections/SEOPDP.tsx";
+import * as $$$13 from "deco-sites/std/sections/SEOPLP.tsx";
+import * as $$$14 from "deco-sites/std/sections/configOCC.global.tsx";
+import * as $$$15 from "deco-sites/std/sections/configShopify.global.tsx";
+import * as $$$16 from "deco-sites/std/sections/configVTEX.global.tsx";
 import * as $$$$0 from "$live/functions/EffectSelectPage.ts";
 import * as $$$$1 from "$live/functions/MatchDate.ts";
 import * as $$$$2 from "$live/functions/MatchEnvironment.ts";
@@ -76,12 +77,13 @@ const manifest: DecoManifest = {
     "./sections/ProductGallery.tsx": $$$7,
     "./sections/ProductShelf.tsx": $$$8,
     "./sections/SearchControls.tsx": $$$9,
-    "deco-sites/std/sections/SEO.tsx": $$$10,
-    "deco-sites/std/sections/SEOPDP.tsx": $$$11,
-    "deco-sites/std/sections/SEOPLP.tsx": $$$12,
-    "deco-sites/std/sections/configOCC.global.tsx": $$$13,
-    "deco-sites/std/sections/configShopify.global.tsx": $$$14,
-    "deco-sites/std/sections/configVTEX.global.tsx": $$$15,
+    "./sections/Video.tsx": $$$10,
+    "deco-sites/std/sections/SEO.tsx": $$$11,
+    "deco-sites/std/sections/SEOPDP.tsx": $$$12,
+    "deco-sites/std/sections/SEOPLP.tsx": $$$13,
+    "deco-sites/std/sections/configOCC.global.tsx": $$$14,
+    "deco-sites/std/sections/configShopify.global.tsx": $$$15,
+    "deco-sites/std/sections/configVTEX.global.tsx": $$$16,
   },
   functions: {
     "$live/functions/EffectSelectPage.ts": $$$$0,
@@ -756,6 +758,23 @@ const manifest: DecoManifest = {
         },
         "required": [
           "page",
+        ],
+      },
+      "outputSchema": null,
+    },
+    "./sections/Video.tsx": {
+      "inputSchema": {
+        "title": " Video",
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string",
+            "title": "Id",
+            "description": "ID of video",
+          },
+        },
+        "required": [
+          "id",
         ],
       },
       "outputSchema": null,
