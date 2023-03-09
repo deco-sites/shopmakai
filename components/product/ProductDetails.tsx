@@ -10,6 +10,8 @@ import { formatPrice } from "$store/sdk/format.ts";
 import type { LoaderReturnType } from "$live/types.ts";
 import type { ProductDetailsPage } from "deco-sites/std/commerce/types.ts";
 
+import { Head } from "$fresh/runtime.ts";
+
 import ProductSelector from "./ProductVariantSelector.tsx";
 
 export interface Props {
@@ -32,12 +34,17 @@ function ProductDetails({ page }: Props) {
     image: images,
     name,
     gtin,
+    isVariantOf
   } = product;
   const { price, listPrice, seller, installments } = useOffer(offers);
 
   const [front, back] = images ?? [];
 
   return (
+    <>
+    <Head>
+      <title>{`${isVariantOf.name} ${name}`}</title>
+    </Head>
     <Container class="py-0 sm:py-10">
       <div class="flex flex-col gap-4 sm:flex-row sm:gap-10">
         {/* Image Gallery */}
@@ -68,9 +75,7 @@ function ProductDetails({ page }: Props) {
                 Cod. {gtin}
               </Text>
             </div>
-            <h1>
-              <Text variant="heading-regular">{name}</Text>
-            </h1>
+            <h1 class="font-bold lowercase">{isVariantOf.name}</h1>
           </div>
           {/* Prices */}
           <div class="mt-4">
@@ -121,6 +126,7 @@ function ProductDetails({ page }: Props) {
         </div>
       </div>
     </Container>
+    </>
   );
 }
 
