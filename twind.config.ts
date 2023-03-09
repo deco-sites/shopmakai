@@ -15,7 +15,7 @@ const options: Omit<Options, "selfURL"> = {
       display: "flex",
       flexDirection: "column",
       minHeight: "100vh",
-      fontFamily: "Poppins,sans-serif"
+      fontFamily: "Poppins, sans-serif"
     },
     'section[data-manifest-key="./sections/Footer.tsx"]': {
       marginTop: "auto",
@@ -120,10 +120,6 @@ const options: Omit<Options, "selfURL"> = {
           to: { transform: "translateY(0)" },
         },
       },
-    },
-    fontFamily: {
-      sans: ["Poppins", "sans-serif"],
-      serif: ["inherit", "serif"],
     },
     screens: {
       sm: "640px",
