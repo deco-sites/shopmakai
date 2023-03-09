@@ -28,6 +28,7 @@ const options: Omit<Options, "selfURL"> = {
     },
   }),
   plugins: {
+    aspectRatio: {"aspect-ratio": 1},
     backdrop: {
       "&::backdrop": {
         background: "rgba(0, 0, 0, 0.5)",
