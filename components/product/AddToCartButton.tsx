@@ -13,8 +13,8 @@ function AddToCartButton({ skuId, sellerId }: Props) {
   });
 
   return (
-    <Button {...props} class="w-full">
-      Adicionar à Sacola
+    <Button {...props} variant="empty" class="w-full bg-pink text-black tracking-[2px] hover:tracking-[1px] py-1.5 transition-[0.5s]">
+      comprar
     </Button>
   );
 }

@@ -45,7 +45,9 @@ function ProductDetails({ page }: Props) {
     <Head>
       <title>{`${isVariantOf.name} ${name}`}</title>
     </Head>
-    <Container class="py-0 sm:py-10">
+    <Container class="py-0">
+      {/* Breadcrumb */}
+      <Breadcrumb breadcrumbList={breadcrumbList} />
       <div class="flex flex-col gap-4 sm:flex-row sm:gap-10">
         {/* Image Gallery */}
         <div class="flex flex-row overflow-auto scroll-x-mandatory scroll-smooth sm:gap-2">
@@ -66,39 +68,31 @@ function ProductDetails({ page }: Props) {
         </div>
         {/* Product Info */}
         <div class="px-4 sm:px-0">
-          {/* Breadcrumb */}
-          <Breadcrumb breadcrumbList={breadcrumbList} />
           {/* Code and name */}
           <div class="mt-4 sm:mt-8">
-            <div>
-              <Text tone="subdued" variant="subcaption-regular">
-                Cod. {gtin}
-              </Text>
-            </div>
-            <h1 class="font-bold lowercase">{isVariantOf.name}</h1>
+            <h1 class="font-bold lowercase text-[20px] flex justify-between items-center">
+              {isVariantOf.name}
+              <Icon id="Heart" width={20} height={20} strokeWidth={2} />
+            </h1>
           </div>
           {/* Prices */}
           <div class="mt-4">
             <div class="flex flex-row gap-2 items-center">
-              <Text
-                class="line-through"
-                tone="subdued"
-                variant="subcaption-regular"
-              >
-                {formatPrice(listPrice, offers!.priceCurrency!)}
-              </Text>
-              <Text tone="critical" variant="heading-strong">
+              <strong class="font-bold text-[24px]">
                 {formatPrice(price, offers!.priceCurrency!)}
-              </Text>
+              </strong>
             </div>
             <Text tone="subdued" variant="caption-regular">
-              {installments}
+              <p dangerouslySetInnerHTML={{ __html: installments }}></p>
             </Text>
           </div>
           {/* Sku Selector */}
           <div class="mt-4 sm:mt-6">
             <ProductSelector product={product} />
           </div>
+          <button class="py-1.5 px-3 border-1 border-primary-extra-light text-[12px] uppercase mt-6 w-[fit-content] text-primary cursor-pointer">
+            Tabela de Medidas
+          </button>
           {/* Add to Cart and Favorites button */}
           <div class="mt-4 sm:mt-10 flex flex-col gap-2">
             {seller && (
@@ -107,10 +101,6 @@ function ProductDetails({ page }: Props) {
                 sellerId={seller}
               />
             )}
-            <Button variant="quiet">
-              <Icon id="Heart" width={20} height={20} strokeWidth={2} />{" "}
-              Favoritar
-            </Button>
           </div>
           {/* Description card */}
           <div class="mt-4 sm:mt-6">
