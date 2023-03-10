@@ -12,9 +12,9 @@ function NavItem(itemProps: Item) {
     <div class="relative hover:children:block h-full">
       <a
         href={itemProps.href ?? `/search?ft=${itemProps.label}`}
-        class="flex items-center font-bold px-1 h-full"
+        class="flex items-center font-semibold px-1 h-full"
       >
-        <span class="text-[14px] uppercase text-primary hover:text-pink tracking-[1px] h-full flex items-center">
+        <span class="text-[13px] uppercase text-primary hover:text-pink tracking-[1px] h-full flex items-center">
           {itemProps.label}
         </span>
       </a>
