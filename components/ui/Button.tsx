@@ -18,6 +18,7 @@ const variants = {
   quiet:
     "py-2 px-3 text-body-regular font-body-regular text-default border-default",
   icon: "text-default border-transparent disabled:opacity-50 bg-transparent",
+  empty: ""
 };
 
 const Button = forwardRef<HTMLButtonElement, Props>(({
@@ -33,7 +34,7 @@ const Button = forwardRef<HTMLButtonElement, Props>(({
 
   return (
     <Component
-      className={`inline-flex items-center justify-center gap-2 cursor-pointer transition-colors duration-150 ease-in rounded border-1 focus:outline-none ${styles} ${_class}`}
+      className={`inline-flex items-center justify-center gap-2 cursor-pointer border-1 focus:outline-none ${styles} ${_class}`}
       {...props}
       ref={ref}
     >

@@ -15,17 +15,11 @@ function VariantSelector({ product }: Props) {
     <ul class="flex flex-col gap-4">
       {Object.keys(possibilities).map((name) => (
         <li class="flex flex-col gap-2">
-          <Text variant="caption-regular">{name}</Text>
-          <ul class="flex flex-row gap-2">
+          <ul class="flex flex-row">
             {Object.entries(possibilities[name]).map(([url, value]) => (
               <li>
-                <a href={url}>
-                  <Avatar
-                    // deno-lint-ignore no-explicit-any
-                    content={value as any}
-                    disabled={url === currentUrl}
-                    variant={name === "COR" ? "color" : "abbreviation"}
-                  />
+                <a href={url} class={`${url === currentUrl ? "bg-pink text-white" : "bg-white"} px-3 py-1.5 rounded-[3px] text-[13px]`}>
+                  {value}
                 </a>
               </li>
             ))}
