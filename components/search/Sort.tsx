@@ -37,13 +37,16 @@ function Sort() {
   const sort = useSort();
 
   return (
-    <select id="sort" name="sort" onInput={applySort} class="w-min m-2">
-      {options.map(({ value, label }) => (
-        <option key={value} value={value} selected={value === sort}>
-          <Text variant="caption-regular">{label}</Text>
-        </option>
-      ))}
-    </select>
+    <div class="flex items-center">
+      <p class="pr-[20px] lowercase text-xs tracking-[.36px] font-normal">ordenar por: </p>
+      <select className="outline-none w-[292px] border-1 border-[#d1d1d1] py-[16px] px-[8px]" id="sort" name="sort" onInput={applySort} class="w-min m-2">
+        {options.map(({ value, label }) => (
+          <option key={value} value={value} selected={value === sort}>
+            <Text variant="caption-regular">{label}</Text>
+          </option>
+        ))}
+      </select>
+    </div>
   );
 }
 

@@ -3,6 +3,7 @@ import Container from "$store/components/ui/Container.tsx";
 import Button from "$store/components/ui/Button.tsx";
 import Text from "$store/components/ui/Text.tsx";
 import Icon from "$store/components/ui/Icon.tsx";
+import Filters from "$store/components/search/Filters.tsx";
 import type { LoaderReturnType } from "$live/types.ts";
 import type { ProductListingPage } from "deco-sites/std/commerce/types.ts";
 
@@ -11,14 +12,25 @@ export interface Props {
 }
 
 function ProductGallery({ page }: Props) {
+  const filters = page?.filters;
+
+  if (!filters || filters.length === 0) {
+    return null;
+  }
+
   return (
-    <Container class="sm:py-10">
-      <div class="relative grid grid-cols-2 sm:grid-cols-4 gap-2 sm:gap-10 items-center">
-        {page?.products?.map((product, index) => (
-          <div class="w-full sm:px-2 list-none">
-            <ProductCard product={product} preload={index === 0} />
-          </div>
-        ))}
+    <Container>
+      <div class="w-full flex">
+        <div class="max-w-[500px] min-w-[230px]">
+          <Filters filters={filters} />
+        </div>
+        <div class="relative grid grid-cols-2 sm:grid-cols-4 gap-2 sm:gap-10 items-center w-full mt-[50px]">
+          {page?.products?.map((product, index) => (
+            <div class="w-full sm:px-2 list-none">
+              <ProductCard product={product} preload={index === 0} />
+            </div>
+          ))}
+        </div>
       </div>
 
       <div class="flex flex-row items-center justify-center gap-2 my-4">
