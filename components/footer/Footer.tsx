@@ -114,12 +114,6 @@ const defaultSections: Section[] = [
       },
     ],
   },
-  {
-    label: "Segurança",
-    children: [
-
-    ],
-  },
 ];
 
 function SectionItem({ item }: { item: Item }) {
@@ -137,7 +131,7 @@ function SectionItem({ item }: { item: Item }) {
           </div>
         )
         : (
-          <a href={item.href}>
+          <a href={item.href} class="text-[12px]">
             {item.label}
           </a>
         )}
@@ -167,13 +161,13 @@ function Footer({ sections = defaultSections }: Props) {
             <Newsletter />
           </FooterContainer>
 
-          <FooterContainer>
+          <FooterContainer class="max-w-[1300px] m-auto w-full">
             {/* Desktop view */}
             <ul class="hidden sm:flex flex-row justify-between">
               {sections.map((section) => (
                 <li>
                   <div>
-                    <h3 class="text-black font-bold uppercase">
+                    <h3 class="text-black font-semibold text-[14px] uppercase">
                       {section.label}
                     </h3>
 

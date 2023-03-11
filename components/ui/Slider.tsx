@@ -5,9 +5,9 @@ interface Props {
   children?: ComponentChildren;
 }
 
-function Slider({ children }: Props) {
+function Slider({ children, props }: Props) {
   return (
-    <ul class="flex flex-nowrap justify-between overflow-x-auto max-w-full w-full scroll-x-mandatory scroll-smooth scrollbar-none">
+    <ul {...props} class="flex flex-nowrap justify-evenly overflow-x-auto max-w-full w-full scroll-x-mandatory scroll-smooth scrollbar-none gap-6">
       {Children.map(
         children,
         (child) => <li class="scroll-snap-center">{child}</li>,
