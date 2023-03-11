@@ -41,7 +41,7 @@ function SearchControls({ page }: Props) {
           </Button>
           <Modal
             class="lg:hidden"
-            title="Filtrar"
+            title="FILTROS"
             mode="sidebar-right"
             open={open.value}
             onClose={() => {
