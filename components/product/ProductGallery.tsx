@@ -19,9 +19,9 @@ function ProductGallery({ page }: Props) {
   }
 
   return (
-    <Container>
-      <div class="w-full flex">
-        <div class="max-w-[500px] min-w-[230px]">
+    <Container class="w-full">
+      <div class="w-full flex max-w-[1280px]">
+        <div class="hidden max-w-[500px] min-w-[230px] lg:block">
           <Filters filters={filters} />
         </div>
         <div class="relative grid grid-cols-2 sm:grid-cols-4 gap-2 sm:gap-10 items-center w-full mt-[50px]">

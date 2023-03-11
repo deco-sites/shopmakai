@@ -29,6 +29,16 @@ const options: Omit<Options, "selfURL"> = {
   }),
   plugins: {
     aspectRatio: {"aspect-ratio": 1},
+    scrollStyle: {
+      "&::-webkit-scrollbar": {
+        width: "4px"
+      },
+      "&::-webkit-scrollbar-thumb": {
+        backgroundColor: "#d1d1d1",
+        borderRadius: "20px",
+        border: "3px solid #d1d1d1"
+      }
+    },
     backdrop: {
       "&::backdrop": {
         background: "rgba(0, 0, 0, 0.5)",

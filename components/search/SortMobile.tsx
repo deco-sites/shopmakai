@@ -33,12 +33,11 @@ const applySort = (e: JSX.TargetedEvent<HTMLSelectElement, Event>) => {
   window.location.search = urlSearchParams.toString();
 };
 
-function Sort() {
+function SortMobile() {
   const sort = useSort();
   return (
-    <div class="hidden w-[180px] lg:flex items-center lg:w-[380px]">
-      <p class="hidden pr-[20px] lowercase text-xs tracking-[.36px] font-normal lg:(block whitespace-nowrap)">ordenar por: </p>
-      <select className="lowercase outline-none py-[16px] w-[292px] px-[8px] text-left font-normal bg-[#fff] border-1 border-[#d1d1d1]" id="sort" name="sort" onInput={applySort} class="w-min m-2">
+    <div class="lg:hidden w-[180px] flex items-center lg:w-[380px]">
+      <select className="appearance-none bg-[#f5f5f5] rounded-none p-4 border-0 text-[#000] text-xs border-0 text-xs font-bold lowercase outline-none py-[16px] w-[292px] px-[8px] text-center" id="sort" name="sort" onInput={applySort} class="w-min m-2">
         {options.map(({ value, label }) => (
           <option key={value} value={value} selected={value === sort}>
             <Text variant="caption-regular">{label}</Text>
@@ -49,4 +48,4 @@ function Sort() {
   );
 }
 
-export default Sort;
+export default SortMobile;
