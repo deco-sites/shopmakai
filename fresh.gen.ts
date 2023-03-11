@@ -27,15 +27,16 @@ import * as $$$6 from "./sections/Instafeed.tsx";
 import * as $$$7 from "./sections/ProductDetails.tsx";
 import * as $$$8 from "./sections/ProductGallery.tsx";
 import * as $$$9 from "./sections/ProductShelf.tsx";
-import * as $$$10 from "./sections/RichText.tsx";
-import * as $$$11 from "./sections/SearchControls.tsx";
-import * as $$$12 from "./sections/Video.tsx";
-import * as $$$13 from "deco-sites/std/sections/SEO.tsx";
-import * as $$$14 from "deco-sites/std/sections/SEOPDP.tsx";
-import * as $$$15 from "deco-sites/std/sections/SEOPLP.tsx";
-import * as $$$16 from "deco-sites/std/sections/configOCC.global.tsx";
-import * as $$$17 from "deco-sites/std/sections/configShopify.global.tsx";
-import * as $$$18 from "deco-sites/std/sections/configVTEX.global.tsx";
+import * as $$$10 from "./sections/ProductShelfWithImage.tsx";
+import * as $$$11 from "./sections/RichText.tsx";
+import * as $$$12 from "./sections/SearchControls.tsx";
+import * as $$$13 from "./sections/Video.tsx";
+import * as $$$14 from "deco-sites/std/sections/SEO.tsx";
+import * as $$$15 from "deco-sites/std/sections/SEOPDP.tsx";
+import * as $$$16 from "deco-sites/std/sections/SEOPLP.tsx";
+import * as $$$17 from "deco-sites/std/sections/configOCC.global.tsx";
+import * as $$$18 from "deco-sites/std/sections/configShopify.global.tsx";
+import * as $$$19 from "deco-sites/std/sections/configVTEX.global.tsx";
 import * as $$$$0 from "$live/functions/EffectSelectPage.ts";
 import * as $$$$1 from "$live/functions/MatchDate.ts";
 import * as $$$$2 from "$live/functions/MatchEnvironment.ts";
@@ -81,15 +82,16 @@ const manifest: DecoManifest = {
     "./sections/ProductDetails.tsx": $$$7,
     "./sections/ProductGallery.tsx": $$$8,
     "./sections/ProductShelf.tsx": $$$9,
-    "./sections/RichText.tsx": $$$10,
-    "./sections/SearchControls.tsx": $$$11,
-    "./sections/Video.tsx": $$$12,
-    "deco-sites/std/sections/SEO.tsx": $$$13,
-    "deco-sites/std/sections/SEOPDP.tsx": $$$14,
-    "deco-sites/std/sections/SEOPLP.tsx": $$$15,
-    "deco-sites/std/sections/configOCC.global.tsx": $$$16,
-    "deco-sites/std/sections/configShopify.global.tsx": $$$17,
-    "deco-sites/std/sections/configVTEX.global.tsx": $$$18,
+    "./sections/ProductShelfWithImage.tsx": $$$10,
+    "./sections/RichText.tsx": $$$11,
+    "./sections/SearchControls.tsx": $$$12,
+    "./sections/Video.tsx": $$$13,
+    "deco-sites/std/sections/SEO.tsx": $$$14,
+    "deco-sites/std/sections/SEOPDP.tsx": $$$15,
+    "deco-sites/std/sections/SEOPLP.tsx": $$$16,
+    "deco-sites/std/sections/configOCC.global.tsx": $$$17,
+    "deco-sites/std/sections/configShopify.global.tsx": $$$18,
+    "deco-sites/std/sections/configVTEX.global.tsx": $$$19,
   },
   functions: {
     "$live/functions/EffectSelectPage.ts": $$$$0,
@@ -817,6 +819,64 @@ const manifest: DecoManifest = {
         "required": [
           "title",
           "products",
+        ],
+      },
+      "outputSchema": null,
+    },
+    "./sections/ProductShelfWithImage.tsx": {
+      "inputSchema": {
+        "title": " Product Shelf With Image",
+        "type": "object",
+        "properties": {
+          "title": {
+            "type": "string",
+            "title": "Title",
+          },
+          "products": {
+            "$id": "4745e1202484ea61e4cdd1a83ec4c56d9e4dce67",
+            "format": "live-function",
+            "type": "string",
+            "title": "Products",
+          },
+          "image": {
+            "title": "Image",
+            "type": "object",
+            "properties": {
+              "src": {
+                "format": "image-uri",
+                "type": "string",
+                "title": "Src",
+              },
+              "alt": {
+                "type": "string",
+                "title": "Alt",
+              },
+            },
+            "required": [
+              "src",
+              "alt",
+            ],
+          },
+          "background": {
+            "type": "string",
+            "anyOf": [
+              {
+                "type": "string",
+                "const": "gray",
+              },
+              {
+                "type": "string",
+                "const": "white",
+              },
+            ],
+            "title": "Background",
+          },
+        },
+        "required": [
+          "title",
+          "products",
+          "image",
+          "background",
         ],
       },
       "outputSchema": null,
