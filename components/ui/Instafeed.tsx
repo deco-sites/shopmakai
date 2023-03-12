@@ -45,13 +45,13 @@ function Instafeed({ medias }: Props) {
           if (typeSource == "image") {
             return (
               <a href={href} key={index} class="w-full max-w-[180px] max-h-[180px] lg:(max-w-[300px] max-h-[300px])">
-                <img loading="lazy" class="w-full max-w-[180px] max-h-[180px] aspectRatio object-cover lg:(max-w-[300px] max-h-[300px])" src={media} alt={alt} />
+                <img width={300} height={300} loading="lazy" class="w-full max-w-[180px] max-h-[180px] aspectRatio object-cover lg:(max-w-[300px] max-h-[300px])" src={media} alt={alt} />
               </a>
             )
           } else  {
             return (
               <a href={href} key={index} class="w-full max-w-[180px] max-h-[180px] lg:(max-w-[300px] max-h-[300px])">
-                <video preload="none" class="w-full max-w-[180px] max-h-[180px] aspectRatio object-cover lg:(max-w-[300px] max-h-[300px])" loop autoPlay muted>
+                <video width={300} height={300} preload="none" class="w-full max-w-[180px] max-h-[180px] aspectRatio object-cover lg:(max-w-[300px] max-h-[300px])" loop autoPlay muted>
                   <source src={media} />
                 </video>
               </a>
