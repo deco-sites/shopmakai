@@ -28,7 +28,7 @@ function ProductShelf({
 
           return (
             <div
-              class={`min-w-[220px] max-w-[220px] sm:min-w-[287px] sm:max-w-[287px] ${ml} ${mr}`}
+              class={`min-w-[200px] max-w-[200px] sm:min-w-[287px] sm:max-w-[287px] ${ml} ${mr}`}
             >
               <ProductCard key={index} product={product} />
             </div>

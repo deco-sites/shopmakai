@@ -26,7 +26,7 @@ function Breadcrumb({ breadcrumbList }: Props) {
   const { itemListElement } = breadcrumbList;
 
   return (
-    <ul class="flex flex-row gap-2 items-center py-4">
+    <ul class="hidden md:flex flex-row gap-2 items-center py-4">
       <Item name="Home" item="/" />
       {itemListElement.map((item) => (
         <>
