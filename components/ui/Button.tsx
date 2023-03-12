@@ -16,7 +16,7 @@ const variants = {
   default:
     "py-2 px-3 text-body-strong font-body-strong text-interactive-default bg-interactive-default disabled:dark-interactive-default border-transparent",
   quiet:
-    "py-2 px-3 text-body-regular font-body-regular text-default border-default",
+    "py-2 px-3 text-default border-default",
   icon: "text-default border-transparent disabled:opacity-50 bg-transparent",
   empty: ""
 };

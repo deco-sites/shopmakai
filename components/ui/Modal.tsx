@@ -22,7 +22,7 @@ export type Props = JSX.IntrinsicElements["dialog"] & {
 };
 
 const styles = {
-  "sidebar-right": "animate-slide-left sm:ml-auto",
+  "sidebar-right": "animate-slide-left ml-auto",
   "sidebar-left": "animate-slide-right",
   center: "",
 };
@@ -60,18 +60,16 @@ const Modal = ({
     <dialog
       {...props}
       ref={ref}
-      class={`bg-transparent p-0 m-0 max-w-[80%] sm:max-w-lg w-full max-h-full h-full backdrop ${variant}`}
+      class={`bg-transparent p-0 m-0 w-[80%] sm:(w-full max-w-[256px]) h-full backdrop ${variant}`}
       onClick={(e) =>
         (e.target as HTMLDialogElement).tagName === "DIALOG" && onClose?.()}
     >
-      <section class="h-full bg-default flex flex-col">
-        <header class="bg-[#f5f5f5] flex justify-between p-6">
-          <Button variant="icon" onClick={onClose}>
+      <section class="relative h-full bg-default flex flex-col">
+        <header class="bg-[#f5f5f5] flex p-6 items-center">
+          <Button class="mr-[16px]" variant="icon" onClick={onClose}>
             <Icon id="XMark" class="text-[#dbb7cb]" width={30} height={30} strokeWidth={2} />
           </Button>
-          <h2>
-            <Text class="text-[#dbb7cb]">{title}</Text>
-          </h2>
+          <h2 class="text-[#000] uppercase font-bold text-sm">{title}</h2>
         </header>
         {loading === "lazy" ? lazy.value && children : children}
       </section>

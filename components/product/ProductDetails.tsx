@@ -3,13 +3,14 @@ import AddToCartButton from "$store/islands/AddToCartButton.tsx";
 import Container from "$store/components/ui/Container.tsx";
 import Text from "$store/components/ui/Text.tsx";
 import Breadcrumb from "$store/components/ui/Breadcrumb.tsx";
+import Carousel from "$store/components/ui/CarouselZoom.tsx";
 import Button from "$store/components/ui/Button.tsx";
 import Icon from "$store/components/ui/Icon.tsx";
 import { useOffer } from "$store/sdk/useOffer.ts";
 import { formatPrice } from "$store/sdk/format.ts";
 import type { LoaderReturnType } from "$live/types.ts";
 import type { ProductDetailsPage } from "deco-sites/std/commerce/types.ts";
-
+import { useState } from 'preact/hooks';
 import { Head } from "$fresh/runtime.ts";
 
 import ProductSelector from "./ProductVariantSelector.tsx";
@@ -38,7 +39,17 @@ function ProductDetails({ page }: Props) {
   } = product;
   const { price, listPrice, seller, installments } = useOffer(offers);
 
-  const [front, back] = images ?? [];
+  const image = images ?? [];
+
+  const [zoom, setZoom] = useState(false);
+
+  const handleZoom = () => {
+    if(zoom) {
+      setZoom(false)
+    } else {
+      setZoom(true)
+    }
+  }
 
   return (
     <>
@@ -48,14 +59,14 @@ function ProductDetails({ page }: Props) {
     <Container class="py-0">
       {/* Breadcrumb */}
       <Breadcrumb breadcrumbList={breadcrumbList} />
-      <div class="flex flex-col gap-4 sm:flex-row sm:gap-10">
+      <div class="flex flex-col sm:justify-center gap-4 sm:flex-row sm:gap-10">
         {/* Image Gallery */}
-        <div class="flex flex-row overflow-auto scroll-x-mandatory scroll-smooth sm:gap-2">
-          {[front, back ?? front].map((img, index) => (
+        <div class="flex flex-row sm:(flex-col mr-[32px]) overflow-auto scroll-x-mandatory scroll-smooth sm:gap-1">
+          {image.map((img, index) => (
             <Image
               style={{ aspectRatio: "360 / 500" }}
-              class="scroll-snap-center min-w-[100vw] sm:min-w-0 sm:w-auto sm:h-[600px]"
-              sizes="(max-width: 640px) 100vw, 30vw"
+              class="cursor-zoom-in scroll-snap-center min-w-[100vw] sm:(min-w-0 w-auto max-w-[652px] h-[100%]) "
+              sizes="(max-width: 640px) 100vw, 100vw"
               src={img.url!}
               alt={img.alternateName}
               width={360}
@@ -63,6 +74,8 @@ function ProductDetails({ page }: Props) {
               // Preload LCP image for better web vitals
               preload={index === 0}
               loading={index === 0 ? "eager" : "lazy"}
+              index={index}
+              onClick={handleZoom}
             />
           ))}
         </div>
@@ -114,6 +127,47 @@ function ProductDetails({ page }: Props) {
             </Text>
           </div>
         </div>
+      </div>
+      <div class={`${zoom ? '' : 'hidden'} sm:(z-50 fixed w-full h-full bottom-0 left-0)`}>
+          <Button onClick={handleZoom} class="mr-[16px] absolute z-50 right-0 top-[10px]" variant="icon">
+            <Icon id="XMark" class="text-[#fff]" width={60} height={60} strokeWidth={2} />
+          </Button>
+        <Carousel
+          // this padding top (pt) is the aspect-ratio (height/width) value from the image below for each viewport
+          class={`w-full h-full`}
+          animationDuration={60}
+          leftArrow={
+            <Icon
+              width={50}
+              height={50}
+              id="ChevronLeft"
+              strokeWidth={1}
+            />
+          }
+          rightArrow={
+            <Icon
+              width={50}
+              height={50}
+              id="ChevronRight"
+              strokeWidth={1}
+            />
+          }
+          dot={<div style={{border: "2px solid transparent", backgroundColor: "#d8d8d8", width: "13px", height: "13px", borderRadius: "100%"}} />}
+        >
+          {image.map((img, index) => (
+            <Image
+              class="w-full"
+              src={img.url!}
+              alt={img.alternateName}
+              width={360}
+              height={500}
+              // Preload LCP image for better web vitals
+              preload={index === 0}
+              loading={"lazy"}
+              index={index}
+            />
+          ))}
+        </Carousel>
       </div>
     </Container>
     </>
