@@ -70,7 +70,7 @@ function ProductDetails({ page }: Props) {
         <div class="px-4 sm:px-0">
           {/* Code and name */}
           <div class="mt-4 sm:mt-8">
-            <h1 class="font-bold lowercase text-[20px] flex justify-between items-center">
+            <h1 class="font-bold text-[#444] lowercase text-[20px] flex justify-between items-center">
               {isVariantOf.name}
               <Icon id="Heart" width={20} height={20} strokeWidth={2} />
             </h1>
@@ -78,7 +78,7 @@ function ProductDetails({ page }: Props) {
           {/* Prices */}
           <div class="mt-4">
             <div class="flex flex-row gap-2 items-center">
-              <strong class="font-bold text-[24px]">
+              <strong class="font-semibold text-[24px] text-[#444]">
                 {formatPrice(price, offers!.priceCurrency!)}
               </strong>
             </div>

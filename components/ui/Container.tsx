@@ -6,7 +6,7 @@ interface Props {
 }
 
 function Container({ children, class: _class = "" }: Props) {
-  return <div class={`max-w-[1280px] mx-auto ${_class}`}>{children}</div>;
+  return <div class={`md:max-w-[1280px] mx-auto ${_class}`}>{children}</div>;
 }
 
 export default Container;

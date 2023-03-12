@@ -12,7 +12,7 @@ export interface Props {
 
 function ProductGallery({ page }: Props) {
   return (
-    <Container class="sm:py-10">
+    <Container class="sm:py-10 max-w-[90vw]">
       <div class="relative grid grid-cols-2 sm:grid-cols-4 gap-2 sm:gap-10 items-center">
         {page?.products?.map((product, index) => (
           <div class="w-full sm:px-2 list-none">

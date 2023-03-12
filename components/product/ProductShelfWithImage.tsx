@@ -18,13 +18,13 @@ function productShelfWithImage({title, products, image, background}) {
 
     return(
         <div class={`bg-${background} w-full`}>
-            <Container class="flex flex-col items-center justify-between py-10 max-w-[1300px] m-auto">
-                <div class="text-left text-[25px] font-bold w-full">
+            <Container class="flex flex-col items-center justify-between py-10 max-w-[90vw] md:max-w-[1300px] m-auto">
+                <div class="text-left text-[20px] md:text-[25px] font-bold w-full">
                     {title && (
                         <h2>{title}</h2>
                     )}
                 </div>
-                <div class="w-full flex justify-between items-center">
+                <div class="w-full flex flex-col md:flex-row justify-between items-center">
                     <div class="max-w-[450px]">
                         <Picture class="w-full h-full">
                             <Source
@@ -41,7 +41,7 @@ function productShelfWithImage({title, products, image, background}) {
                             />
                         </Picture>
                     </div>
-                    <div class="w-full">
+                    <div class="w-full mt-6 md:mt-0">
                         <Slider>
                             {products?.map((product, index) => {
                             const ml = index === 0 ? "ml-4" : "";
@@ -49,7 +49,7 @@ function productShelfWithImage({title, products, image, background}) {
 
                             return (
                                 <div
-                                class={`min-w-[220px] max-w-[220px] sm:min-w-[287px] sm:max-w-[287px] ${ml} ${mr}`}
+                                class={`min-w-[200px] max-w-[200px] sm:min-w-[287px] sm:max-w-[287px] ${ml} ${mr}`}
                                 >
                                 <ProductCard key={index} product={product} />
                                 </div>

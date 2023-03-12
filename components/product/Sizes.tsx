@@ -13,14 +13,14 @@ export default function Sizes(product: Product) {
   
     return (
     <div class="flex justify-between py-2">
-        <select class="border-1 border-primary-extra-light px-4 cursor-pointer" onChange={(e) => {setUrl(e.target.value)}}>
+        <select class="border-1 border-primary-extra-light md:px-4 cursor-pointer" onChange={(e) => {setUrl(e.target.value)}}>
             {
             options.map(([url, value]) => (
                 <option value={url}>{value}</option>
             ))
             }
         </select>
-        <a class="bg-white text-primary border-1 border-primary-extra-light px-12 py-2.5 font-bold hover:bg-pink hover:border-transparent hover:tracking-[1px] transition-[0.5s]" href={url}>comprar</a>
+        <a class="bg-white text-primary border-1 border-primary-extra-light px-6 md:px-12 py-2.5 font-bold hover:bg-pink hover:border-transparent hover:tracking-[1px] transition-[0.5s]" href={url}>comprar</a>
     </div>
     );
 }
