@@ -2,6 +2,8 @@ import Container from "$store/components/ui/Container.tsx";
 import type { Image as LiveImage } from "deco-sites/std/components/types.ts";
 import type { Video as LiveVideo } from "deco-sites/std/components/types.ts";
 import { Head } from "$fresh/runtime.ts";
+import Image from "deco-sites/std/components/Image.tsx";
+import Video from "deco-sites/std/components/Video.tsx";
 
 export type typesSources =
   "image" |
@@ -37,17 +39,17 @@ export interface Props {
 function Instafeed({ medias }: Props) {
   return (
     <>
-    <Head>
-      {
-        medias?.map(({typeSource, media}) => {
-          if (typeSource == "image") {
-            return (
-              <link rel="preload" as="image" href={media}></link>
-            )
-          }
-        })
-      }
-    </Head>
+      <Head>
+        {
+          medias?.map(({typeSource, media}) => {
+            if (typeSource == "image") {
+              return (
+                <link rel="preload" as="image" href={media}></link>
+              )
+            }
+          })
+        }
+      </Head>
       <Container class="mx-auto">
         <div class="w-[90%] mx-auto mb-[13px] md:(flex items-center m-0 px-[20px]) xl:px-0">
           <h2 class="text-xl tracking-[.36px] text-black uppercase font-black mb-[5px] md:(mb-[0] mr-[15px])">STALK US AT:</h2>
@@ -58,15 +60,13 @@ function Instafeed({ medias }: Props) {
             if (typeSource == "image") {
               return (
                 <a href={href} key={index} class="w-full max-w-[180px] max-h-[180px] lg:(max-w-[300px] max-h-[300px])">
-                  <img width={150} height={150} loading="lazy" class="w-full max-w-[180px] max-h-[180px] aspectRatio object-cover lg:(max-w-[300px] max-h-[300px])" src={media} alt={alt} />
+                  <Image width={150} height={150} loading="lazy" class="w-full max-w-[180px] max-h-[180px] aspectRatio object-cover lg:(max-w-[300px] max-h-[300px])" src={media} alt={alt} />
                 </a>
               )
             } else  {
               return (
                 <a href={href} key={index} class="w-full max-w-[180px] max-h-[180px] lg:(max-w-[300px] max-h-[300px])">
-                  <video width={150} height={150} preload="none" class="w-full max-w-[180px] max-h-[180px] aspectRatio object-cover lg:(max-w-[300px] max-h-[300px])" loop autoPlay muted>
-                    <source src={media} />
-                  </video>
+                  <Video src={media} width={150} height={150} class="w-full max-w-[180px] max-h-[180px] aspectRatio object-cover lg:(max-w-[300px] max-h-[300px])" loop autoPlay muted></Video>
                 </a>
               )
             }
