@@ -937,14 +937,15 @@ const manifest: DecoManifest = {
         "title": " Video",
         "type": "object",
         "properties": {
-          "id": {
+          "video": {
+            "format": "video-uri",
             "type": "string",
-            "title": "Id",
+            "title": "Video",
             "description": "ID of video",
           },
         },
         "required": [
-          "id",
+          "video",
         ],
       },
       "outputSchema": null,

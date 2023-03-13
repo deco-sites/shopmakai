@@ -1,9 +1,9 @@
-import Video, {
+import VideoComponent, {
   Props,
 } from "$store/components/ui/Video.tsx";
 
 function VideoSection(props: Props) {
-  return <Video {...props} />;
+  return <VideoComponent {...props} />;
 }
 
 export default VideoSection;
