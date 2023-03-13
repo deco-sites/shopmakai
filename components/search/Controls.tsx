@@ -8,6 +8,7 @@ import Modal from "$store/components/ui/Modal.tsx";
 import { useSignal } from "@preact/signals";
 import type { ProductListingPage } from "deco-sites/std/commerce/types.ts";
 import type { LoaderReturnType } from "$live/types.ts";
+import HeadingSearch from "$store/components/search/HeadingSearch.tsx"
 
 export interface Props {
   page: LoaderReturnType<ProductListingPage>;
@@ -23,7 +24,10 @@ function SearchControls({ page }: Props) {
 
   return (
     <Container class="flex flex-col justify-between">
-      <div class="flex flex-col-reverse items-center mt-[30px] justify-evenly lg:(flex-row mt-[50px] pl-[140px])">
+      <div class="mt-[30px]">
+        <HeadingSearch/>
+      </div>
+      <div class="flex flex-col-reverse items-center mt-[30px] justify-evenly lg:(flex-row pl-[140px])">
         <div class="my-[16px] lg:my-0">
           <span class="text-sm tracking-[.36px]"><strong class="font-bold">{page?.products.length}</strong> produtos</span>
         </div>
