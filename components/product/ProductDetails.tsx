@@ -61,7 +61,7 @@ function ProductDetails({ page }: Props) {
       <Breadcrumb breadcrumbList={breadcrumbList} />
       <div class="flex flex-col sm:justify-center gap-4 sm:flex-row sm:gap-10">
         {/* Image Gallery */}
-        <div class="flex flex-row sm:(flex-col mr-[32px]) overflow-auto scroll-x-mandatory scroll-smooth sm:gap-1">
+        <div class="flex flex-row lg:w-3/5 sm:(flex-col mr-[32px]) lg:px-[40px] xl:px-0 overflow-auto scroll-x-mandatory scroll-smooth sm:gap-1">
           {image.map((img, index) => (
             <Image
               style={{ aspectRatio: "360 / 500" }}
@@ -80,7 +80,7 @@ function ProductDetails({ page }: Props) {
           ))}
         </div>
         {/* Product Info */}
-        <div class="px-4 sm:px-0 md:w-[30%]">
+        <div class="sticky top-[150px] flex self-start flex-col px-4 lg:w-2/5 sm:px-0">
           {/* Code and name */}
           <div class="mt-4 sm:mt-8">
             <h1 class="font-bold text-[#444] lowercase text-[20px] flex justify-between items-center">
@@ -114,17 +114,6 @@ function ProductDetails({ page }: Props) {
                 sellerId={seller}
               />
             )}
-          </div>
-          {/* Description card */}
-          <div class="mt-4 sm:mt-6">
-            <Text variant="caption-regular">
-              {description && (
-                <details>
-                  <summary class="cursor-pointer">Descrição</summary>
-                  <div class="ml-2 mt-2">{description}</div>
-                </details>
-              )}
-            </Text>
           </div>
         </div>
       </div>
@@ -168,6 +157,12 @@ function ProductDetails({ page }: Props) {
             />
           ))}
         </Carousel>
+      </div>
+      <div class="mx-auto px-[15px] sm:px-[40px] xl:px-0 my-[40px]">
+        <h3 class="font-bold text-sm md:text-xl tracking-[.04em] text-black border-b-2 border-black w-[90px] md:w-[125px] pb-[5px]">DESCRIÇÃO</h3>
+        <div class="mt-[40px]">
+          <p class="text-[11px] font-light tracking-[1px] text-[#616161] leading-[1.38]" dangerouslySetInnerHTML={{__html: description}}></p>
+        </div>
       </div>
     </Container>
     </>

@@ -14,6 +14,8 @@ function Video({ id }: Props) {
         (
           <Container class="w-11/12 lg:w-full mx-auto my-16 lg:my-24">
             <iframe 
+              preload="none"
+              loading="lazy"
               width="100%" 
               height="500" 
               src={"https://www.youtube.com/embed/" + id} 
