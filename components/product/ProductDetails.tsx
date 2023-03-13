@@ -80,7 +80,7 @@ function ProductDetails({ page }: Props) {
           ))}
         </div>
         {/* Product Info */}
-        <div class="px-4 sm:px-0">
+        <div class="px-4 sm:px-0 md:w-[30%]">
           {/* Code and name */}
           <div class="mt-4 sm:mt-8">
             <h1 class="font-bold text-[#444] lowercase text-[20px] flex justify-between items-center">
