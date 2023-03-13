@@ -17,9 +17,7 @@ function ProductShelf({
   return (
     <Container class="flex flex-col items-center justify-between py-10">
       {title && (
-        <h2>
-          <Text class="uppercase" variant="subheading-strong">{title}</Text>
-        </h2>
+        <h2 class="text-left text-[20px] md:text-[25px] font-bold w-full">{title}</h2>
       )}
       <Slider>
         {products?.map((product, index) => {
