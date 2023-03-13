@@ -943,9 +943,16 @@ const manifest: DecoManifest = {
             "title": "Video",
             "description": "ID of video",
           },
+          "thumb": {
+            "format": "image-uri",
+            "type": "string",
+            "title": "Thumb",
+            "description": "Thumbnail of video",
+          },
         },
         "required": [
           "video",
+          "thumb",
         ],
       },
       "outputSchema": null,

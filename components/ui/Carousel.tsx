@@ -137,6 +137,7 @@ function Carousel(
                   <a
                     href={`#${generateSlideId(id, index)}`}
                     class="focus:text-gray-600"
+                    aria-label="dot"
                   >
                     {dot}
                   </a>

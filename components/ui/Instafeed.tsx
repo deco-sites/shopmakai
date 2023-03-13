@@ -59,13 +59,13 @@ function Instafeed({ medias }: Props) {
           {medias?.map(({typeSource, media, alt, href}, index) => {
             if (typeSource == "image") {
               return (
-                <a href={href} key={index} class="w-full max-w-[180px] max-h-[180px] lg:(max-w-[300px] max-h-[300px])">
+                <a aria-label="link to instagram"  href={href} key={index} class="w-full max-w-[180px] max-h-[180px] lg:(max-w-[300px] max-h-[300px])">
                   <Image width={150} height={150} loading="lazy" class="w-full max-w-[180px] max-h-[180px] aspectRatio object-cover lg:(max-w-[300px] max-h-[300px])" src={media} alt={alt} />
                 </a>
               )
             } else  {
               return (
-                <a href={href} key={index} class="w-full max-w-[180px] max-h-[180px] lg:(max-w-[300px] max-h-[300px])">
+                <a aria-label="link to instagram"  href={href} key={index} class="w-full max-w-[180px] max-h-[180px] lg:(max-w-[300px] max-h-[300px])">
                   <Video src={media} width={150} height={150} class="w-full max-w-[180px] max-h-[180px] aspectRatio object-cover lg:(max-w-[300px] max-h-[300px])" loop autoPlay muted></Video>
                 </a>
               )
