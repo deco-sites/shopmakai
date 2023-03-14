@@ -31,8 +31,6 @@ function VideoComponent({ video, thumb }: Props) {
                 height={210} 
                 controls
                 poster={thumb}
-                fetchPriority={"low"}
-                decoding={"async"}
                 allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"></Video>
               </Suspense>
           </Container>
