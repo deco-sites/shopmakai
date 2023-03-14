@@ -4,6 +4,7 @@ import type { Video as LiveVideo } from "deco-sites/std/components/types.ts";
 import { Head } from "$fresh/runtime.ts";
 import Image from "deco-sites/std/components/Image.tsx";
 import Video from "deco-sites/std/components/Video.tsx";
+import { Picture, Source } from "deco-sites/std/components/Picture.tsx";
 
 export type typesSources =
   "image" |
@@ -49,7 +50,20 @@ function Instafeed({ medias }: Props) {
             if (typeSource == "image") {
               return (
                 <a aria-label="link to instagram"  href={href} key={index} class="w-full max-w-[180px] max-h-[180px] lg:(max-w-[300px] max-h-[300px])">
-                  <Image width={150} height={150} loading="lazy" class="w-full max-w-[180px] max-h-[180px] aspectRatio object-cover lg:(max-w-[300px] max-h-[300px])" src={media} alt={alt} />
+                  <Picture class="w-full h-full">
+                    <Source
+                      fetchPriority="auto"
+                      src={media}
+                      width={150}
+                      height={150}
+                    />
+                    <img
+                      class="w-full"
+                      loading={"lazy"}
+                      src={media}
+                      alt={alt}
+                    />
+                  </Picture>
                 </a>
               )
             } else  {

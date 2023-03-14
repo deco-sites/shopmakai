@@ -55,6 +55,7 @@ function ProductCard({ product, preload }: Props) {
             alt={back?.alternateName ?? front.alternateName}
             width={200}
             height={279}
+            loading="lazy"
             class="w-full hidden group-hover:block"
             sizes="(max-width: 640px) 50vw, 20vw"
           />

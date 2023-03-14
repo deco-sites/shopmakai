@@ -51,7 +51,7 @@ function productShelfWithImage({title, products, image, background}) {
                                 <div
                                 class={`min-w-[200px] max-w-[200px] sm:min-w-[287px] sm:max-w-[287px] ${ml} ${mr}`}
                                 >
-                                <ProductCard key={index} product={product} />
+                                <ProductCard key={index} product={product} preload={false} />
                                 </div>
                             );
                             })}
