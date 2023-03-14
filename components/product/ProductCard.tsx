@@ -47,7 +47,7 @@ function ProductCard({ product, preload }: Props) {
             height={279}
             class="w-full group-hover:hidden"
             preload={preload}
-            fetchPriority={preload ? "high" : "low"}
+            fetchPriority={"low"}
             loading={preload ? "eager" : "lazy"}
             sizes="(max-width: 640px) 50vw, 20vw"
           />
