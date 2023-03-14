@@ -39,17 +39,6 @@ export interface Props {
 function Instafeed({ medias }: Props) {
   return (
     <>
-      <Head>
-        {
-          medias?.map(({typeSource, media}) => {
-            if (typeSource == "image") {
-              return (
-                <link rel="preload" as="image" href={media}></link>
-              )
-            }
-          })
-        }
-      </Head>
       <Container class="mx-auto">
         <div class="w-[90%] mx-auto mb-[13px] md:(flex items-center m-0 px-[20px]) xl:px-0">
           <h2 class="text-xl tracking-[.36px] text-black uppercase font-black mb-[5px] md:(mb-[0] mr-[15px])">STALK US AT:</h2>
