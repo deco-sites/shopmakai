@@ -94,7 +94,6 @@ function BannerCarousel({ images, preload }: Props) {
                 loading={lcp ? "eager" : "lazy"}
                 src={desktop}
                 alt={alt}
-                decoding={lcp ? "sync" : "async"} 
               />
             </Picture>
           );
