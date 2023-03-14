@@ -74,7 +74,7 @@ function BannerCarousel({ images, preload }: Props) {
           const lcp = isFirst && preload;
 
           return (
-            <Picture class="w-full h-full" preload={lcp}>
+            <Picture class="w-full h-full">
               <Source
                 media="(max-width: 1024px)"
                 fetchPriority={lcp ? "high" : "auto"}
@@ -94,6 +94,7 @@ function BannerCarousel({ images, preload }: Props) {
                 loading={lcp ? "eager" : "lazy"}
                 src={desktop}
                 alt={alt}
+                decoding={lcp ? "sync" : "async"} 
               />
             </Picture>
           );
