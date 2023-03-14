@@ -77,14 +77,14 @@ function BannerCarousel({ images, preload }: Props) {
             <Picture class="w-full h-full">
               <Source
                 media="(max-width: 1024px)"
-                fetchPriority={lcp ? "high" : "auto"}
+                fetchPriority={lcp ? "high" : "low"}
                 src={mobile}
                 width={414}
                 height={551}
               />
               <Source
                 media="(min-width: 1025px)"
-                fetchPriority={lcp ? "high" : "auto"}
+                fetchPriority={lcp ? "high" : "low"}
                 src={desktop}
                 width={1366}
                 height={517}
