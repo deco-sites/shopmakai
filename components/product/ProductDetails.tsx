@@ -74,6 +74,7 @@ function ProductDetails({ page }: Props) {
               // Preload LCP image for better web vitals
               preload={index === 0}
               loading={index === 0 ? "eager" : "lazy"}
+              fetchPriority={index === 0 ? "high" : "low"}
               index={index}
               onClick={handleZoom}
             />
