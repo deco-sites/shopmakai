@@ -28,7 +28,7 @@ function productShelfWithImage({title, products, image, background}) {
                     <div class="max-w-[450px]">
                         <Picture class="w-full h-full">
                             <Source
-                            fetchPriority={"auto"}
+                            fetchPriority={"low"}
                             src={image.src}
                             width={426}
                             height={479}

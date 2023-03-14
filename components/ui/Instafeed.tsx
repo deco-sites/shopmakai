@@ -50,26 +50,21 @@ function Instafeed({ medias }: Props) {
             if (typeSource == "image") {
               return (
                 <a aria-label="link to instagram"  href={href} key={index} class="w-full max-w-[180px] max-h-[180px] lg:(max-w-[300px] max-h-[300px])">
-                  <Picture class="w-full h-full">
-                    <Source
-                      fetchPriority="auto"
-                      src={media}
-                      width={150}
-                      height={150}
-                    />
-                    <img
-                      class="w-full"
-                      loading={"lazy"}
-                      src={media}
-                      alt={alt}
-                    />
-                  </Picture>
+                  <Image
+                    width={150}
+                    height={150}
+                    src={media}
+                    preload={false}
+                    alt={alt}
+                    loading={"lazy"}
+                    fetchPriority={"low"}
+                  />
                 </a>
               )
             } else  {
               return (
                 <a aria-label="link to instagram"  href={href} key={index} class="w-full max-w-[180px] max-h-[180px] lg:(max-w-[300px] max-h-[300px])">
-                  <Video src={media} width={150} height={150} class="w-full max-w-[180px] max-h-[180px] aspectRatio object-cover lg:(max-w-[300px] max-h-[300px])" loop autoPlay muted></Video>
+                  <Video src={media} width={150} height={150} class="w-full max-w-[180px] max-h-[180px] aspectRatio object-cover lg:(max-w-[300px] max-h-[300px])" loop autoPlay muted fetchPriority={"low"}></Video>
                 </a>
               )
             }
