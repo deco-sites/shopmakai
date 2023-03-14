@@ -55,6 +55,16 @@ function ProductDetails({ page }: Props) {
     <>
     <Head>
       <title>{`${isVariantOf.name} ${name}`}</title>
+      {
+        image?.map((imageC, index) => {
+          if(index === 0){
+            return (
+              <link rel="preload" as="image" href={imageC}></link>
+            )
+          }
+          
+        })
+      }
     </Head>
     <Container class="py-0">
       {/* Breadcrumb */}
@@ -75,7 +85,6 @@ function ProductDetails({ page }: Props) {
               preload={index === 0}
               loading={index === 0 ? "eager" : "lazy"}
               fetchPriority={index === 0 ? "high" : "low"}
-              decoding={index === 0 ? "sync" : "async"}
               index={index}
               onClick={handleZoom}
             />
