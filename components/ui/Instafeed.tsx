@@ -62,7 +62,6 @@ function Instafeed({ medias }: Props) {
                       loading={"lazy"}
                       src={media}
                       alt={alt}
-                      decoding={"async"} 
                     />
                   </Picture>
                 </a>
