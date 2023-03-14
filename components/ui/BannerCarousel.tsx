@@ -51,16 +51,6 @@ function BannerCarousel({ images, preload }: Props) {
   
   return (
     <>
-      <Head>
-        {
-          allImages?.map((image) => {
-            return (
-
-              <link rel="preload" as="image" href={image}></link>
-            )
-          })
-        }
-      </Head>
       <Carousel
         // this padding top (pt) is the aspect-ratio (height/width) value from the image below for each viewport
         class={`w-full h-full max-w-[1843px] m-auto pt-[${aspectRatio(mobileDimension)}%] md:pt-[${aspectRatio(desktopDimension)}%] xxl:pt-[680px]`}
@@ -77,8 +67,8 @@ function BannerCarousel({ images, preload }: Props) {
                 media="(max-width: 1024px)"
                 fetchPriority={lcp ? "high" : "auto"}
                 src={mobile}
-                width={768}
-                height={1024}
+                width={414}
+                height={551}
               />
               <Source
                 media="(min-width: 1025px)"
