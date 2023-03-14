@@ -44,12 +44,10 @@ function productShelfWithImage({title, products, image, background}) {
                     <div class="w-full mt-6 md:mt-0">
                         <Slider>
                             {products?.map((product, index) => {
-                            const ml = index === 0 ? "ml-4" : "";
-                            const mr = index === products.length - 1 ? "mr-4" : "";
 
                             return (
                                 <div
-                                class={`min-w-[200px] max-w-[200px] sm:min-w-[287px] sm:max-w-[287px] ${ml} ${mr}`}
+                                class={`min-w-[170px] max-w-[170px] sm:min-w-[287px] sm:max-w-[287px]`}
                                 >
                                 <ProductCard key={index} product={product} preload={false} />
                                 </div>

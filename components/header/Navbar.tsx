@@ -39,7 +39,7 @@ function NavItem(itemProps: Item) {
                   <a href={child.href}>
                     <Picture class="block" preload={false}>
                       <Source
-                        fetchPriority="auto"
+                        fetchPriority="low"
                         src={child.image}
                         width={195}
                         height={239}

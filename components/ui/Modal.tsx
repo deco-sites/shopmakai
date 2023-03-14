@@ -60,7 +60,7 @@ const Modal = ({
     <dialog
       {...props}
       ref={ref}
-      class={`bg-transparent p-0 m-0 w-[80%] sm:(w-full max-w-[256px]) h-full backdrop ${variant}`}
+      class={`bg-transparent max-h-[100vh] p-0 m-0 w-[80%] sm:(w-full max-w-[256px]) h-full backdrop ${variant}`}
       onClick={(e) =>
         (e.target as HTMLDialogElement).tagName === "DIALOG" && onClose?.()}
     >

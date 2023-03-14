@@ -15,18 +15,15 @@ function ProductShelf({
   products,
 }: Props) {
   return (
-    <Container class="flex flex-col items-center justify-between py-10">
+    <Container class="flex flex-col items-center justify-between py-10 max-w-[90vw]">
       {title && (
         <h2 class="text-left text-[20px] md:text-[25px] font-bold w-full">{title}</h2>
       )}
       <Slider>
         {products?.map((product, index) => {
-          const ml = index === 0 ? "ml-4" : "";
-          const mr = index === products.length - 1 ? "mr-4" : "";
-
           return (
             <div
-              class={`min-w-[200px] max-w-[200px] sm:min-w-[287px] sm:max-w-[287px] ${ml} ${mr}`}
+              class={`min-w-[200px] max-w-[200px] sm:min-w-[287px] sm:max-w-[287px]`}
             >
               <ProductCard key={index} product={product} preload={false} />
             </div>
