@@ -45,13 +45,13 @@ function Instafeed({ medias }: Props) {
           <h2 class="text-xl tracking-[.36px] text-black uppercase font-black mb-[5px] md:(mb-[0] mr-[15px])">STALK US AT:</h2>
           <a class="text-[15px] font-normal font-black tracking-[.36px]" href="https://www.instagram.com/makaibikini/">@makaibikini</a>
         </div>
-        <div class="w-[90%] mx-auto grid grid-cols-3 grid-rows-3 gap-[15px] lg:(w-full max-w-[950px] m-0 mt-[40px] px-[20px]) xl:px-0">
+        <div class="w-[90%] mx-auto grid grid-cols-4 grid-rows-3 gap-[15px] lg:(w-full m-0 mt-[40px] px-[20px]) xl:px-0">
           {medias?.map(({typeSource, media, alt, href}, index) => {
             if (typeSource == "image") {
               return (
-                <a aria-label="link to instagram"  href={href} key={index} class="w-full max-w-[180px] max-h-[180px] lg:(max-w-[300px] max-h-[300px])">
+                <a aria-label="link to instagram"  href={href} key={index} class="w-full max-w-[180px] max-h-[180px] lg:(max-w-[350px] max-h-[350px])">
                   <Image
-                    class="w-full max-w-[180px] max-h-[180px] aspectRatio object-cover lg:(max-w-[300px] max-h-[300px])"
+                    class="w-full max-w-[180px] max-h-[180px] aspectRatio object-cover lg:(max-w-[350px] max-h-[350px])"
                     width={150}
                     height={150}
                     src={media}
@@ -64,8 +64,8 @@ function Instafeed({ medias }: Props) {
               )
             } else  {
               return (
-                <a aria-label="link to instagram"  href={href} key={index} class="w-full max-w-[180px] max-h-[180px] lg:(max-w-[300px] max-h-[300px])">
-                  <Video src={media} width={150} height={150} class="w-full max-w-[180px] max-h-[180px] aspectRatio object-cover lg:(max-w-[300px] max-h-[300px])" loop autoPlay muted></Video>
+                <a aria-label="link to instagram"  href={href} key={index} class="w-full max-w-[180px] max-h-[180px] lg:(max-w-[350px] max-h-[350px])">
+                  <Video src={media} width={150} height={150} class="w-full max-w-[180px] max-h-[180px] aspectRatio object-cover lg:(max-w-[350px] max-h-[350px])" loop autoPlay muted></Video>
                 </a>
               )
             }
